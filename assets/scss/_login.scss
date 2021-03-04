@@ -1,0 +1,16 @@
+.my-login-container{
+    height: 100vh;
+    display: grid;
+    align-items: center;
+}
+.my-login-col{
+    @include media-breakpoint-down(sm){
+        // padding: 0px;
+    }
+}
+.login{
+    font-weight: 600;
+    & .form-group{
+        font-size: 14px;
+    }
+}

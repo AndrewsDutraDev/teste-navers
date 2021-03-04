@@ -1,0 +1,44 @@
+* {
+  font-family: "Montserrat";
+  font-weight: 600;
+}
+
+.myborder-login {
+  border: 1px solid #212121;
+}
+
+.myborder-fields {
+  border-radius: 0px;
+  border: 1px solid #424242;
+}
+
+.button {
+  background-color: #424242;
+  color: #ffffff;
+  border: 0px;
+  padding: 8px 0px;
+}
+
+.button.submit {
+  width: 100%;
+}
+
+.button.submit:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #212121;
+}
+
+.my-login-container {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.login {
+  font-weight: 600;
+}
+
+.login .form-group {
+  font-size: 14px;
+}

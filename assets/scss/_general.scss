@@ -1,0 +1,28 @@
+*{
+    font-family: $font_default;
+    font-weight: 600; // Alguns textos possuem weigth 400
+}
+.myborder{
+    &-login{
+        border: 1px solid $color_default;
+    }
+    &-fields{
+        border-radius: 0px;
+        border: 1px solid $color_secondary;
+    }
+}
+
+.button{
+    background-color: $color_secondary;
+    color: #ffffff;
+    border: 0px;
+    padding: 8px 0px;
+    &.submit{ 
+        width: 100%;
+        &:hover{
+            background-color: #fff;
+            color: #000;
+            border: 1px solid $color_default;
+        }
+    }
+}
