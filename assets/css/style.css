@@ -23,7 +23,11 @@
   width: 100%;
 }
 
-.button.submit:hover {
+.button.action {
+  background-color: #212121;
+}
+
+.button:hover {
   background-color: #fff;
   color: #000;
   border: 1px solid #212121;
@@ -41,4 +45,22 @@
 
 .login .form-group {
   font-size: 14px;
+}
+
+.navers .title {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+@media (max-width: 767.98px) {
+  .navers .title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navers .add-naver {
+    width: 100%;
+    margin-top: 20px;
+  }
 }

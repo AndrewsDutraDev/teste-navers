@@ -14,23 +14,20 @@ export const state = () => {
     }
 }
 export const mutations = {
-    setAuth(state, auth = {
-        access_token: '',
-    }) {
+    setAuth(state, auth){
         state.access_token = auth
-    },
+    }
 }
 export const actions = {
     async nuxtServerInit({commit, state}, {req, app}) {
         let access_token = ''
         if (req.headers.cookie) {
-            console.log('veio aq')
             const parsed = cookieparser.parse(req.headers.cookie)
-            console.log(parsed)
             try {
-                access_token = JSON.parse(parsed.auth)
-            } catch (err) {
+                access_token = parsed.token
+            } catch (e) {
                 // No valid cookie found
+                console.log(e)
             }
         }
         commit('setAuth', access_token)

@@ -1,0 +1,15 @@
+.navers{
+    & .title{
+        font-size: $size_title;
+        font-weight: 600;
+        @include media-breakpoint-down(sm){
+            text-align: center;
+        }
+    }
+    & .add-naver{
+        @include media-breakpoint-down(sm){
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+}

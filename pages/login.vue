@@ -64,9 +64,7 @@ export default {
 			params.append('password', this.password);
 			this.$axios.$post('/users/login', params)
             .then((response) => {
-				// console.log(response)
 				const access_token = response.token
-				// this.$axios.setToken(access_token, 'Bearer')
 				Cookies.set('token', response.token)
 				this.$store.commit('setAuth', access_token)
 				this.$router.push('/')

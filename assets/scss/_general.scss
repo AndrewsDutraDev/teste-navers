@@ -19,10 +19,13 @@
     padding: 8px 0px;
     &.submit{ 
         width: 100%;
-        &:hover{
-            background-color: #fff;
-            color: #000;
-            border: 1px solid $color_default;
-        }
+    }
+    &.action{
+        background-color: $color_default;
+    }
+    &:hover{
+        background-color: #fff;
+        color: #000;
+        border: 1px solid $color_default;
     }
 }
