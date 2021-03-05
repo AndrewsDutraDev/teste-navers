@@ -17,7 +17,7 @@
 import naversList from '~/components/naversList';
 export default {
     components:{
-        naversList
+        naversList,
     },
 	async asyncData({params, query, res, $axios, req, app, error, store}) {
         try {

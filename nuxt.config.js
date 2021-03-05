@@ -23,6 +23,7 @@ export default {
 	plugins: [
 		{ src: "~/plugins/vee-validate.js", ssr: true },
 		{src: `~/plugins/axios.js`, ssr: true},
+		{src: `~/plugins/vue-modal.js`, ssr: true},
 	
 	],
 
