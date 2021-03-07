@@ -22,8 +22,7 @@
     "nuxt-webfontloader": "^1.1.0",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.1",
-    "vee-validate": "^3.0.0",
-    "vue-js-modal": "^2.0.0-rc.6"
+    "vee-validate": "^3.0.0"
   },
   "devDependencies": {}
 }
