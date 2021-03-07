@@ -12,6 +12,14 @@
     }
 }
 
+.icon-action{
+    cursor: pointer;
+}
+
+.title{
+    font-size: $size_pretitle;
+}
+
 .button{
     background-color: $color_secondary;
     color: #ffffff;
@@ -23,9 +31,15 @@
     &.action{
         background-color: $color_default;
     }
+    &.modal-action{
+        width: 175px;
+    }
     &:hover{
         background-color: #fff;
         color: #000;
         border: 1px solid $color_default;
     }
+}
+label{
+    font-size: $size_small;
 }

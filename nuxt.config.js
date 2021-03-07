@@ -13,6 +13,10 @@ export default {
 			},
 			{ hid: "description", name: "description", content: "" }
 		],
+		script:[
+			{ src: '/js/jquery.min.js', type: "text/javascript", body: true },
+            { src: '/js/bootstrap.min.js', type: "text/javascript", body: true },
+		],
 		link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
 	},
 

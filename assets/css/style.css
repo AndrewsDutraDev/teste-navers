@@ -12,6 +12,14 @@
   border: 1px solid #424242;
 }
 
+.icon-action {
+  cursor: pointer;
+}
+
+.title {
+  font-size: 24px;
+}
+
 .button {
   background-color: #424242;
   color: #ffffff;
@@ -27,10 +35,18 @@
   background-color: #212121;
 }
 
+.button.modal-action {
+  width: 175px;
+}
+
 .button:hover {
   background-color: #fff;
   color: #000;
   border: 1px solid #212121;
+}
+
+label {
+  font-size: 14px;
 }
 
 .my-login-container {
@@ -63,4 +79,15 @@
     width: 100%;
     margin-top: 20px;
   }
+}
+
+@media (min-width: 768px) {
+  .modal .mydialog {
+    min-width: 700px;
+  }
+}
+
+.modal .text {
+  font-size: 16px;
+  font-weight: 400;
 }

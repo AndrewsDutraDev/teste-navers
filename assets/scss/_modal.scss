@@ -1,0 +1,14 @@
+.modal{
+    & .mydialog{
+        @include media-breakpoint-up(md){
+            min-width: 700px;
+        }
+    }
+    // & .title{
+    //     font-size: $size_pretitle;
+    // }
+    & .text{
+        font-size: $size_texts;
+        font-weight: 400;
+    }
+}
