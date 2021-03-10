@@ -53,23 +53,28 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end mt-3">
-                    <button type="submit" class="button pr-5 pl-5"> Salvar </button>
+                    <button type="submit" class="button pr-5 pl-5" data-toggle="modal" data-target="#Sucessfully"> Salvar </button>
                 </div>
             </form>
         </ValidationObserver>
+        <div v-if="name && office && birthdate && company_time && projects && url_image">
+            <modal-successfully/>
+        </div>
     </div>
 </template>
 <script>
 import FormMessage from "~/components/FormMessage";
 import form from "~/mixins/form";
 import {ValidationProvider, ValidationObserver} from "vee-validate";
+import ModalSuccessfully from '~/components/modalSuccessfully.vue';
 export default {
     props:['adicionar'],
     mixins: [form],
 	components: { 
         ValidationProvider,
 		ValidationObserver,
-		FormMessage
+		FormMessage,
+        ModalSuccessfully
     },
     data(){
         return{

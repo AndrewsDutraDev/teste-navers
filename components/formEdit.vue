@@ -34,19 +34,19 @@
                 </div>
             </div>
             <div class="d-flex justify-content-end mt-3">
-                <button type="submit" class="button pr-5 pl-5" data-toggle="modal" data-target="#editSucessfully"> Salvar </button>
+                <button type="submit" class="button pr-5 pl-5" data-toggle="modal" data-target="#Sucessfully"> Salvar </button>
             </div>
         </form>
         <div>
-            <modal-edit/>
+            <modal-successfully :edit="true"/>
         </div>
         
     </div>
 </template>
 <script>
-import modalEdit from './modalEdit.vue';
+import ModalSuccessfully from '~/components/modalSuccessfully.vue';
 export default {
-    components: { modalEdit },
+    components: { ModalSuccessfully },
     props: ['naver'],
     data(){
         return{
@@ -74,6 +74,7 @@ export default {
                 // this.$router.go()
             })
             .catch((e) => {
+                alert(e)
                 console.error(e);
             })
 		}
