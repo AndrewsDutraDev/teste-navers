@@ -37,8 +37,8 @@
                 <button type="submit" class="button pr-5 pl-5" data-toggle="modal" data-target="#Sucessfully"> Salvar </button>
             </div>
         </form>
-        <div>
-            <modal-successfully :edit="true"/>
+        <div v-if="sucessfully">
+            <modal-successfully :edit="true" @close="sucessfully = false"/>
         </div>
         
     </div>
@@ -55,7 +55,8 @@ export default {
             birthdate: '',
             admission_date: '',
             project: this.naver.project,
-            url: this.naver.url
+            url: this.naver.url,
+            sucessfully: false
         }
     },
     methods:{
@@ -71,7 +72,8 @@ export default {
             console.log(this.$axios.$put(`/navers/${this.naver.id}`))
 			this.$axios.$put(`navers/${this.naver.id}`, params)
             .then((response) => {
-                window.location.href = '/'
+                this.sucessfully = true
+                // window.location.href = '/'
             })
             .catch((e) => {
                 alert(e)
