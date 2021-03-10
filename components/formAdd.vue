@@ -22,15 +22,15 @@
                     <div class="form-row">
                         <ValidationProvider name="idade" rules="required" slim v-slot="{ errors, required }">
                             <div class="form-group col-md-6">
-                                <label for="Idade">Idade</label>
-                                <input type="number" class="form-control myborder-fields" v-model="age" id="idade">
+                                <label for="Idade">Data de nascimento</label>
+                                <input type="date" class="form-control myborder-fields" id="idade" v-model="birthdate">
                                 <small v-show="errors[0]" class="text-danger">{{ errors[0] }}</small>
                             </div>
                         </ValidationProvider>
                         <ValidationProvider name="Tempo de empresa" rules="required" slim v-slot="{ errors, required }">
                             <div class="form-group col-md-6">
-                                <label for="tempo_empresa">Tempo de empresa</label>
-                                <input type="text" class="form-control myborder-fields" v-model="company_time" id="tempo_empresa">
+                                <label for="tempo_empresa">Tempo de empresa (Data de admissão)</label>
+                                <input type="date" class="form-control myborder-fields" id="tempo_empresa" v-model="company_time">
                                 <small v-show="errors[0]" class="text-danger">{{ errors[0] }}</small>
                             </div>
                         </ValidationProvider>
@@ -71,32 +71,31 @@ export default {
 		ValidationObserver,
 		FormMessage
     },
+    data(){
+        return{
+            name: '',
+            office: '',
+            birthdate: '',
+            company_time: '',
+            projects: '',
+            url_image: ''
+        }
+    },
     methods:{
 		async onSubmit() {
-			// '/users/login'
 			this.msg_form = ''
 			const params = new URLSearchParams();
-            params.append('email', this.email);
-			params.append('password', this.password);
-			this.$axios.$post('/users/login', params)
+            params.append('name', this.name);
+            params.append('admission_date', this.$moment(this.company_time).format('DD/MM/YYYY'));
+            params.append('job_role', this.office);
+            params.append('project', this.projects);
+            params.append('birthdate', this.$moment(this.birthdate).format('DD/MM/YYYY'));
+            params.append('url', this.url_image);
+			this.$axios.$post(`navers`, params)
             .then((response) => {
-				const access_token = response.token
-				Cookies.set('token', response.token)
-				this.$store.commit('setAuth', access_token)
-				this.$router.push('/')
-                // if (response.enviado === 'sim') {
-                //     this.msg_form = 'Mensagem enviada!';
-                //     this.msg_form_type = 'success';
-                //     this.enviando = false
-                //     // this.reset();
-                // } else {
-                //     this.msg_form = 'Não foi possível enviar: ' + response.msg;
-                //     this.msg_form_type = 'error';
-                // }
+                this.$router.go()
             })
             .catch((e) => {
-                this.msg_form = 'Não foi possível enviar!';
-                this.msg_form_type = 'error';
                 console.error(e);
             })
 		}
