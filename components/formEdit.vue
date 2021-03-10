@@ -71,7 +71,7 @@ export default {
             console.log(this.$axios.$put(`/navers/${this.naver.id}`))
 			this.$axios.$put(`navers/${this.naver.id}`, params)
             .then((response) => {
-                // this.$router.go()
+                window.location.href = '/'
             })
             .catch((e) => {
                 alert(e)

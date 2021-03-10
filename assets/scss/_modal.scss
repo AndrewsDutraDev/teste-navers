@@ -4,9 +4,6 @@
             min-width: 700px;
         }
     }
-    // & .title{
-    //     font-size: $size_pretitle;
-    // }
     & .text{
         font-size: $size_texts;
         font-weight: 400;
@@ -17,4 +14,18 @@
     position: absolute;
     right: 10px;
     top: 15px;
+}
+
+// Naver Modal Info
+
+.naver-modal{
+    & .title{
+        font-size: 24px;
+    }
+    & .field-info{
+        font-size: 16px;
+    }
+    & .info{
+        font-weight: 400;
+    }
 }

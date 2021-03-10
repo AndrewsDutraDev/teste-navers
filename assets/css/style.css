@@ -49,6 +49,13 @@ label {
   font-size: 14px;
 }
 
+.object-fit-cover {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .my-login-container {
   height: 100vh;
   display: grid;
@@ -81,6 +88,10 @@ label {
   }
 }
 
+.job_role {
+  font-weight: 400;
+}
+
 @media (min-width: 768px) {
   .modal .mydialog {
     min-width: 700px;
@@ -96,4 +107,16 @@ label {
   position: absolute;
   right: 10px;
   top: 15px;
+}
+
+.naver-modal .title {
+  font-size: 24px;
+}
+
+.naver-modal .field-info {
+  font-size: 16px;
+}
+
+.naver-modal .info {
+  font-weight: 400;
 }
