@@ -14,12 +14,12 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="Idade">Idade</label>
-                        <input type="text" class="form-control myborder-fields" id="idade" v-model="birthdate">
+                        <label for="Idade">Data de nascimento</label>
+                        <input type="date" class="form-control myborder-fields" id="idade" v-model="birthdate">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="tempo_empresa">Tempo de empresa</label>
-                        <input type="text" class="form-control myborder-fields" id="tempo_empresa" v-model="admission_date">
+                        <label for="tempo_empresa">Tempo de empresa (Data de admissão)</label>
+                        <input type="date" class="form-control myborder-fields" id="tempo_empresa" v-model="admission_date">
                     </div>
                 </div>
                 <div class="form-row">
@@ -50,11 +50,10 @@ export default {
     props: ['naver'],
     data(){
         return{
-            showSucessfully: false,
             name: this.naver.name,
             job_role: this.naver.job_role,
-            birthdate: this.naver.birthdate,
-            admission_date: this.naver.admission_date,
+            birthdate: '',
+            admission_date: '',
             project: this.naver.project,
             url: this.naver.url
         }
@@ -64,15 +63,14 @@ export default {
             console.log(this.naver.id)
 			const params = new URLSearchParams();
             params.append('name', this.name);
-            params.append('admission_date', this.admission_date);
+            params.append('admission_date', this.$moment(this.admission_date).format('DD/MM/YYYY'));
             params.append('job_role', this.job_role);
             params.append('project', this.project);
-            params.append('birthdate', this.birthdate);
+            params.append('birthdate', this.$moment(this.birthdate).format('DD/MM/YYYY'));
             params.append('url', this.url);
             console.log(this.$axios.$put(`/navers/${this.naver.id}`))
 			this.$axios.$put(`navers/${this.naver.id}`, params)
             .then((response) => {
-                this.showSucessfully = true
                 // this.$router.go()
             })
             .catch((e) => {
@@ -80,6 +78,9 @@ export default {
             })
 		}
     },
-
+    mounted(){
+        this.birthdate = this.$moment.utc(this.naver.birthdate).format('YYYY-MM-DD')
+        this.admission_date = this.$moment.utc(this.naver.admission_date).format('YYYY-MM-DD')
+    }
 }
 </script>
