@@ -22,7 +22,7 @@
                                     class="icon-action"
                                 />
                             </div>
-							<a href="/edit">
+							<a :href="'/editar/?id='+naver.id">
 								<img src="/Edit-Icon.svg" alt="edit" title="Edit" class="icon-action"/>
 							</a>
                         </div>
@@ -80,7 +80,7 @@ export default {
         },
         deleteNaver(){
             this.$axios.delete(`/navers/${this.toDelete}`).then((res) =>{
-                console.log('deletado')
+                this.$router.go(0)
             }).catch((e)=>{
                 console.log(e)
             })

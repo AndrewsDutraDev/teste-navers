@@ -7,7 +7,7 @@
 				</a>
 				<div class="title"> Editar Naver </div>
 			</div>
-			<formEdit/>
+			<formEdit :naver="naver"/>
         </div>
     </div>
 </template>
@@ -18,6 +18,20 @@ import formEdit from '~/components/formEdit'
             return{
 
             }
-        }    
+        },
+        async asyncData({params, query, res, $axios, req, app, error, store}) {
+        try {
+            let naver = {}
+            await $axios.$get(`/navers/${query.id}`).then((res) =>{
+                naver = res
+            })
+            return {
+                naver: naver
+            }
+        }
+        catch (e) {
+            console.log(e)
+        }
+    },
     }
 </script>
