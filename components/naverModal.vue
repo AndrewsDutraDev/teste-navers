@@ -14,32 +14,37 @@
                     <div class="w-100 w-md-50">
                         <img class="w-100 img-fluid" :src="info.url" :alt="info.name">                    
                     </div>
-                    <div class="w-100 w-md-50 h-100 ml-4">
-                        <div class="d-flex justify-content-between mt-4">
-                            <div class="title mt-2" v-html="info.name"></div>
-                            <button data-dismiss="modal" class="border-0 close-button pr-2">
+                    <div class="w-100 w-md-50 h-100">
+                        <div class="modal-header border-0 justify-content-end p-0 pt-2">
+                            <button data-dismiss="modal" class="border-0 close-button">
                                 <img src="/Close-Icon.svg" alt="close" title="close">
                             </button>
                         </div>
-                        <div class="info mt-2" v-html="info.job_role"></div>
-                        <div class="field-info mt-3"> Data de nascimento </div>
-                        <div class="info mt-1" v-html="$moment(info.birthdate).format('DD/MM/YYYY')"></div>
-                        <div class="field-info mt-3"> Tempo da empresa </div>
-                        <div class="info mt-1" v-html="$moment(info.admission_date).format('DD/MM/YYYY')"></div>
-                        <div class="field-info mt-3"> Projetos que participou </div>
-                        <div class="info mt-1" v-html="info.project"></div>
-                        <div class="d-flex">
-						    <div data-toggle="modal" data-target="#modalDelete" @click="$emit('delete')">
-                                <img
-                                    src="/Delete-Icon.svg"
-                                    alt="delete"
-                                    title="Delete"
-                                    class="icon-action mr-2"
-                                />
+                        <div class="ml-3">
+                            <div class="title mt-2" v-html="info.name"></div>
+                            <div class="info mt-2" v-html="info.job_role"></div>
+                            <div class="field-info mt-3"> Data de nascimento </div>
+                            <div class="info mt-1" v-html="$moment(info.birthdate).format('DD/MM/YYYY')"></div>
+                            <div class="field-info mt-3"> Tempo da empresa </div>
+                            <div class="info mt-1" v-html="$moment(info.admission_date).format('DD/MM/YYYY')"></div>
+                            <div class="field-info mt-3"> Projetos que participou </div>
+                            <div class="info mt-1 mb-4" v-html="info.project"></div>
+                            
+                        </div>
+                        <div class="modal-footer border-0 justify-content-start">
+                            <div class="d-flex mb-3">
+                                <div data-toggle="modal" data-target="#modalDelete" @click="$emit('delete')">
+                                    <img
+                                        src="/Delete-Icon.svg"
+                                        alt="delete"
+                                        title="Delete"
+                                        class="icon-action mr-2"
+                                    />
+                                </div>
+                                <a :href="'/editar/?id='+info.id">
+                                    <img src="/Edit-Icon.svg" alt="edit" title="Edit" class="icon-action"/>
+                                </a>
                             </div>
-                            <a :href="'/editar/?id='+info.id">
-                                <img src="/Edit-Icon.svg" alt="edit" title="Edit" class="icon-action"/>
-                            </a>
                         </div>
                     </div>
                     

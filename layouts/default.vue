@@ -2,12 +2,14 @@
 	<div>
 		<div v-if="$route.path != '/login'">
 			<div class="d-flex justify-content-between p-3">
-				<img
-					src="/logo.svg"
-					class="img-fluid"
-					alt="Logo Nave.rs"
-					title="nave.rs"
-				/>
+				<a href="/">
+					<img
+						src="/logo.svg"
+						class="img-fluid"
+						alt="Logo Nave.rs"
+						title="nave.rs"
+					/>
+				</a>
 				<div class="my-auto">
 					<button class="bg-white border-0" @click="logout()">
 						Sair
@@ -25,7 +27,7 @@ export default{
 	methods:{
 		logout(){
 			Cookies.remove('token')
-			window.location.href = 'login'
+			window.location.href = '/login'
 		}
 	},
 	mounted(){
