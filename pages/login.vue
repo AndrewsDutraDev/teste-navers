@@ -57,7 +57,6 @@ export default {
 	},
 	methods:{
 		async onSubmit() {
-			// '/users/login'
 			this.msg_form = ''
 			const params = new URLSearchParams();
             params.append('email', this.email);
@@ -84,14 +83,6 @@ export default {
                 console.error(e);
             })
 		}
-	},
-	// async fetch(){
-    //     await this.$axios.$get(`/navers`).then((res)=>{
-
-    //         this.teste = res
-    //     }).catch((e) => {
-    //         console.error(e)
-    //     })
-	// }
+	}
 }
 </script>
