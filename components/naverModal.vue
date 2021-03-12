@@ -24,9 +24,9 @@
                             <div class="title mt-2" v-html="info.name"></div>
                             <div class="info mt-2" v-html="info.job_role"></div>
                             <div class="field-info mt-3"> Data de nascimento </div>
-                            <div class="info mt-1" v-html="$moment(info.birthdate).format('DD/MM/YYYY')"></div>
+                            <div class="info mt-1" v-html="$moment.utc(info.birthdate).format('DD/MM/YYYY')"></div>
                             <div class="field-info mt-3"> Tempo da empresa </div>
-                            <div class="info mt-1" v-html="$moment(info.admission_date).format('DD/MM/YYYY')"></div>
+                            <div class="info mt-1" v-html="$moment.utc(info.admission_date).format('DD/MM/YYYY')"></div>
                             <div class="field-info mt-3"> Projetos que participou </div>
                             <div class="info mt-1 mb-4" v-html="info.project"></div>
                             
