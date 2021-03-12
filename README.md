@@ -13,6 +13,8 @@ e após o install:
 
 ### npm run dev
 
+## Tecnologias usadas
+
 O projeto seguiu tendo como base a API fornecida e o layout passado, com objetivo de ser o mais fiel possível ao que foi solicitado. Foi desenvolvido utilizando Vue.js, Nuxt.js e Bootstrap. Para consumo da API, foi utilizado o cliente HTTP axios.
 
 ## Dificuldades
