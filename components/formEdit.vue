@@ -38,7 +38,7 @@
             </div>
         </form>
         <div v-if="sucessfully">
-            <modal-successfully :edit="true" @close="sucessfully = false"/>
+            <modal-successfully :msg="msg" @close="sucessfully = false"/>
         </div>
         
     </div>
@@ -50,6 +50,10 @@ export default {
     props: ['naver'],
     data(){
         return{
+            msg:{
+                title: 'Naver atualizado',
+                subtitle: 'Naver atualizado com sucesso'
+            },
             name: this.naver.name,
             job_role: this.naver.job_role,
             birthdate: '',
@@ -73,7 +77,9 @@ export default {
 			this.$axios.$put(`navers/${this.naver.id}`, params)
             .then((response) => {
                 this.sucessfully = true
-                // window.location.href = '/'
+                setTimeout(function(){
+                    window.location.href = '/'
+                }, 1000);
             })
             .catch((e) => {
                 alert(e)

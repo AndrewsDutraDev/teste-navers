@@ -58,7 +58,9 @@
             </form>
         </ValidationObserver>
         <div v-if="name && office && birthdate && company_time && projects && url_image">
-            <modal-successfully/>
+            <div v-if="sucessfully">
+                <modal-successfully :msg="msg" @close="sucessfully = false"/>
+            </div>
         </div>
     </div>
 </template>
@@ -78,12 +80,17 @@ export default {
     },
     data(){
         return{
+            msg:{
+                title: 'Naver criado',
+                subtitle: 'Naver criado com sucesso'
+            },
             name: '',
             office: '',
             birthdate: '',
             company_time: '',
             projects: '',
-            url_image: ''
+            url_image: '',
+            sucessfully: false
         }
     },
     methods:{
@@ -98,7 +105,11 @@ export default {
             params.append('url', this.url_image);
 			this.$axios.$post(`navers`, params)
             .then((response) => {
-                this.$router.go()
+                this.sucessfully = true
+                setTimeout(function(){
+                    window.location.href = '/'
+                }, 1000);
+                
             })
             .catch((e) => {
                 console.error(e);
