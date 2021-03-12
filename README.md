@@ -1,20 +1,21 @@
-# teste_navers
+# Desafio Front-End Andrews Pereira Dutra
 
-## Build Setup
+## Como rodar o projeto?
 
-```bash
-# install dependencies
-$ npm install
+É necessário a criação do arquivo .env da seguinte maneira:
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+### apiBaseUrl = 'https://navedex-api.herokuapp.com/v1'
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+Após isso, executar no terminal:
 
-# generate static project
-$ npm run generate
-```
+### npm install
+e após o install:
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+### npm run dev
+
+O projeto seguiu tendo como base a API fornecida e o layout passado, com objetivo de ser o mais fiel possível ao que foi solicitado. Foi desenvolvido utilizando Vue.js, Nuxt.js e Bootstrap. Para consumo da API, foi utilizado o cliente HTTP axios.
+
+## Dificuldades
+
+- Houve certa dificuldade para efetuar o desenvolvimento do login, tendo em vista que até então não tinha muita experiência no assunto. Entretanto, utilizei como base projetos já realizados e assim consegui fazer.
+- Não foi possível fazer o upload da imagem para o banco, pois retornava um erro ao qual mesmo com pesquisas, não foi possível resolver. Para manter o layout, as imagens foram colocadas na pasta Static, e seu caminho foi passado normalmente para o banco.

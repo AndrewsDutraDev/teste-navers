@@ -1,9 +1,4 @@
 .modal, .modal-body{
-    & .mydialog{
-        // @include media-breakpoint-up(md){
-		// 	// min-width: 700px;
-        // }
-	}
 	& .modal-dialog{
 		max-width: 1000px;
 	}

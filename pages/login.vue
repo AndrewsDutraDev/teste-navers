@@ -67,15 +67,6 @@ export default {
 				Cookies.set('token', response.token)
 				this.$store.commit('setAuth', access_token)
 				this.$router.push('/')
-                // if (response.enviado === 'sim') {
-                //     this.msg_form = 'Mensagem enviada!';
-                //     this.msg_form_type = 'success';
-                //     this.enviando = false
-                //     // this.reset();
-                // } else {
-                //     this.msg_form = 'Não foi possível enviar: ' + response.msg;
-                //     this.msg_form_type = 'error';
-                // }
             })
             .catch((e) => {
                 this.msg_form = 'Não foi possível enviar!';

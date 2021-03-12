@@ -65,7 +65,6 @@ export default {
     },
     methods:{
 		submitedit() {
-            console.log(this.naver.id)
 			const params = new URLSearchParams();
             params.append('name', this.name);
             params.append('admission_date', this.$moment(this.admission_date).format('DD/MM/YYYY'));
@@ -73,7 +72,6 @@ export default {
             params.append('project', this.project);
             params.append('birthdate', this.$moment(this.birthdate).format('DD/MM/YYYY'));
             params.append('url', this.url);
-            console.log(this.$axios.$put(`/navers/${this.naver.id}`))
 			this.$axios.$put(`navers/${this.naver.id}`, params)
             .then((response) => {
                 this.sucessfully = true

@@ -66,10 +66,5 @@ export default {
             },
         }
     },
-    methods:{
-        // openDeleteModal(id){
-        //     this.toDelete = id
-        // },
-    }
 }
 </script>

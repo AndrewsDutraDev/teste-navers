@@ -8,7 +8,7 @@
         aria-labelledby="modalDelete"
         aria-hidden="true"
     >
-        <div class="modal-dialog modal-dialog-centered mydialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="mt-4 mb-4 ml-4 title">Excluir Naver</div>
@@ -38,7 +38,6 @@ export default {
     },
     methods:{
         deleteNaver(){
-            console.log('hell')
             this.$axios.delete(`/navers/${this.id}`).then((res) =>{
                 this.$emit('closeDelete')
                 setTimeout(function(){
